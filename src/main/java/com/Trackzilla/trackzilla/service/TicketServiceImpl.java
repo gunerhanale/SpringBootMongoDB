@@ -26,15 +26,11 @@ public class TicketServiceImpl implements TicketService {
         return ticketRepository.findById(id);
     }
 
-    @Override
-    public Release save(Ticket ticket) {
-        return null;
-    }
 
-    /*@Override
-    public Release save(Ticket ticket) {
+    @Override
+    public Ticket save(Ticket ticket) {
         return ticketRepository.save(ticket);
-    }*/
+    }
 
     @Override
     public void deleteById(String id) {
@@ -42,7 +38,7 @@ public class TicketServiceImpl implements TicketService {
     }
 
     public Long countAllTickets(){
-        Stream<Ticket> stream = ticketRepository.findAllByCustomQuery("Open");
+        Stream<Ticket> stream = ticketRepository.findAllByCustomQuery("open");
         Long count = stream.count();
         stream.close();
         return count;

@@ -10,7 +10,7 @@ public interface TicketService {
 
     public List<Ticket> findAll();
     Optional<Ticket> findById(String id);
-    Release save(Ticket ticket);
+    Ticket save(Ticket ticket);
     void deleteById(String id);
     void insert(Ticket ticket);
 }
