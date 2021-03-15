@@ -20,11 +20,9 @@ public class AppConfig {
 
         return MongoClients.create(mongoClientSettings);
     }
-
     @Bean
     public MongoTemplate mongoTemplate() throws Exception {
         return new MongoTemplate(mongo(), "trackzilla");
     }
-
 
 }

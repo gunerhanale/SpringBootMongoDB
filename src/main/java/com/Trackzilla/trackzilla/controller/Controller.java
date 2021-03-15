@@ -18,14 +18,9 @@ import java.util.Optional;
 @RequestMapping("/tza")
 public class Controller {
 
-    @Autowired
-    private TicketService ticketService;
 
     @Autowired
     private ApplicationService applicationService;
-
-    @Autowired
-    private ReleaseService releaseService;
 
     @RequestMapping(value = "/applications", method = RequestMethod.GET)
     public List<Application> getAllApp(){
