@@ -48,5 +48,25 @@ public class ApplicationController {
         return applicationService.findByName(name);
     }
 
+    //MongoTemplate Methods
+    @RequestMapping(value = "/applications/template", method = RequestMethod.POST)
+    public void addNewApplicationWTemplate(@RequestBody Application application){
+        applicationService.addNewApplicationWTemplate(application);
+    }
+
+    @RequestMapping(value = "/applications/template/{id}", method = RequestMethod.GET)
+    public Application findByIdWTemplate(@PathVariable("id") String id){
+        return applicationService.findByIdWTemplate(id);
+    }
+
+    @RequestMapping(value = "/applications/template", method = RequestMethod.DELETE)
+    public void deleteWTemplate(@RequestBody Application application){
+        applicationService.deleteWTemplate(application);
+    }
+
+    @RequestMapping(value = "/applications/template", method = RequestMethod.PUT)
+    public void updateApplicationWTemplate(@RequestBody Application application){
+        applicationService.updateApplicationWTemplate(application);
+    }
 
 }
