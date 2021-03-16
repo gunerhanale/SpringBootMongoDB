@@ -1,6 +1,5 @@
 package com.Trackzilla.trackzilla.controller;
 
-import com.Trackzilla.trackzilla.data.Application;
 import com.Trackzilla.trackzilla.data.Release;
 import com.Trackzilla.trackzilla.service.ReleaseService;
 import org.springframework.beans.factory.annotation.Autowired;

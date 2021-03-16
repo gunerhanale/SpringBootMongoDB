@@ -66,6 +66,10 @@ public class ApplicationServiceImpl implements ApplicationService {
         applicationRepository.deleteById(id);
     }
 
+    @Override
+    public List<Application> findByName(String name) {
+        return applicationRepository.findByName(name);
+    }
 
 
 }

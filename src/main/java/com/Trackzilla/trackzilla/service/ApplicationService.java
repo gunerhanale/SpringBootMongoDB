@@ -16,6 +16,6 @@ public interface ApplicationService {
     Optional<Application> findById(String id);
     Application save(Application application);
     void deleteById(String id);
-
+    List<Application> findByName(String name);
 
 }
