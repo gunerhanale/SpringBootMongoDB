@@ -35,6 +35,7 @@ public class ApplicationController {
 
     @RequestMapping(value = "/applications/{id}", method = RequestMethod.PUT)
     public Application updateApplication(@PathVariable("id") String id, @RequestBody Application application){
+        application.setId(id);
         return applicationService.save(application);
     }
 

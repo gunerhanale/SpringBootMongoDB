@@ -30,6 +30,12 @@ public class TicketController {
         return ticketService.save(ticket);
     }
 
+    @RequestMapping(value = "/tickets/{id}", method = RequestMethod.PUT)
+    public Ticket updateTicket(@PathVariable("id") String id, @RequestBody Ticket ticket){
+        ticket.setId(id);
+        return ticketService.save(ticket);
+    }
+
     @RequestMapping(value = "/tickets/{id}", method = RequestMethod.DELETE)
     public void deleteTicket(@PathVariable("id") String id){
         ticketService.deleteById(id);
