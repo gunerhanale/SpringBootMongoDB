@@ -1,6 +1,5 @@
 package com.Trackzilla.trackzilla.service;
 
-import com.Trackzilla.trackzilla.data.Release;
 import com.Trackzilla.trackzilla.data.Ticket;
 import com.Trackzilla.trackzilla.repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,11 +36,22 @@ public class TicketServiceImpl implements TicketService {
         ticketRepository.deleteById(id);
     }
 
+    @Override
     public Long countAllTickets(){
         Stream<Ticket> stream = ticketRepository.findAllByCustomQuery("open");
         Long count = stream.count();
         stream.close();
         return count;
+    }
+
+    @Override
+    public List<Ticket> findByStatus(String status) {
+        return ticketRepository.findByStatus(status);
+    }
+
+    @Override
+    public List<Ticket> findByAppId(String appId) {
+        return ticketRepository.findByAppId(appId);
     }
 
     @Override
