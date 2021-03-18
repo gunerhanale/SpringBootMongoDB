@@ -50,6 +50,6 @@ public class ReleaseServiceImpl implements ReleaseService{
 
     @Override
     public void insert(Release release) {
-        releaseRepository.save(release);
+        mongoTemplate.save(release);
     }
 }
